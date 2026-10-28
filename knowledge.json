@@ -1,0 +1,11 @@
+{
+  "hello": "Hello! How can I help you?",
+  "hi": "Hi there!",
+  "how are you": "I'm doing well! Thanks for asking.",
+  "what is your name": "My name is PyBot.",
+  "what is python": "Python is a programming language used in web development, automation, data science, and artificial intelligence.",
+  "what is machine learning": "Machine learning is a field of AI that enables computers to learn patterns from data.",
+  "what is artificial intelligence": "Artificial intelligence is a field of computing focused on building systems that perform tasks associated with human intelligence.",
+  "help": "You can ask me about Python, machine learning, or artificial intelligence.",
+  "bye": "Goodbye! Have a great day!"
+}
