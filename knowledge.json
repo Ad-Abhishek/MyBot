@@ -1,11 +1,59 @@
 {
-  "hello": "Hello! How can I help you?",
-  "hi": "Hi there!",
-  "how are you": "I'm doing well! Thanks for asking.",
-  "what is your name": "My name is PyBot.",
-  "what is python": "Python is a programming language used in web development, automation, data science, and artificial intelligence.",
-  "what is machine learning": "Machine learning is a field of AI that enables computers to learn patterns from data.",
-  "what is artificial intelligence": "Artificial intelligence is a field of computing focused on building systems that perform tasks associated with human intelligence.",
-  "help": "You can ask me about Python, machine learning, or artificial intelligence.",
-  "bye": "Goodbye! Have a great day!"
+  "greeting": {
+    "patterns": ["hello", "hi", "hey", "good morning", "good afternoon"],
+    "responses": [
+      "Hello! How can I help you?",
+      "Hi there! What would you like to learn?",
+      "Hey! I'm PyBot. Ask me something."
+    ]
+  },
+  "bot_identity": {
+    "patterns": ["what is your name", "who are you", "tell me about yourself"],
+    "responses": [
+      "My name is PyBot, your Python chatbot.",
+      "I'm PyBot, a chatbot built with Python."
+    ]
+  },
+  "python": {
+    "patterns": [
+      "what is python",
+      "explain python",
+      "tell me about python",
+      "what is the python programming language"
+    ],
+    "responses": [
+      "Python is a versatile programming language used in web development, automation, data science, and artificial intelligence."
+    ]
+  },
+  "machine_learning": {
+    "patterns": [
+      "what is machine learning",
+      "explain machine learning",
+      "tell me about machine learning"
+    ],
+    "responses": [
+      "Machine learning is a field of artificial intelligence that enables computers to learn patterns from data."
+    ]
+  },
+  "artificial_intelligence": {
+    "patterns": [
+      "what is artificial intelligence",
+      "what is ai",
+      "explain artificial intelligence",
+      "tell me about ai"
+    ],
+    "responses": [
+      "Artificial intelligence is a field of computing focused on building systems that perform tasks associated with human intelligence."
+    ]
+  },
+  "help": {
+    "patterns": ["help", "what can you do", "how can you help me"],
+    "responses": [
+      "I can answer basic questions about Python, machine learning, and artificial intelligence."
+    ]
+  },
+  "farewell": {
+    "patterns": ["bye", "goodbye", "see you later"],
+    "responses": ["Goodbye! Have a great day.", "See you later! Keep learning."]
+  }
 }

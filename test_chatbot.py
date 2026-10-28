@@ -1,47 +1,76 @@
 import unittest
 
-from main import get_response
+from main import (
+    find_best_intent,
+    get_response,
+    load_knowledge,
+    normalize_text,
+    tokenize,
+)
 
 
-class TestChatbot(unittest.TestCase):
+class TestNaturalLanguageProcessing(unittest.TestCase):
 
-    def setUp(self):
-        self.knowledge = {
-            "hello": "Hello! How can I help you?",
-            "what is python": "Python is a programming language.",
-            "bye": "Goodbye! Have a great day!"
-        }
+    @classmethod
+    def setUpClass(cls):
+        cls.knowledge = load_knowledge()
 
-    def test_exact_match(self):
-        response = get_response("hello", self.knowledge)
-
+    def test_text_normalization(self):
         self.assertEqual(
-            response,
-            "Hello! How can I help you?"
+            normalize_text("  HELLO!!!  "),
+            "hello"
+        )
+
+    def test_tokenization(self):
+        self.assertEqual(
+            tokenize("What is Python?"),
+            ["what", "is", "python"]
+        )
+
+    def test_exact_intent_match(self):
+        self.assertEqual(
+            find_best_intent("hello", self.knowledge),
+            "greeting"
         )
 
     def test_case_insensitive_match(self):
-        response = get_response("HELLO", self.knowledge)
-
         self.assertEqual(
-            response,
-            "Hello! How can I help you?"
+            find_best_intent("HELLO", self.knowledge),
+            "greeting"
         )
 
-    def test_whitespace_handling(self):
-        response = get_response("  hello  ", self.knowledge)
-
+    def test_punctuation_handling(self):
         self.assertEqual(
-            response,
-            "Hello! How can I help you?"
+            find_best_intent("Hello!!!", self.knowledge),
+            "greeting"
+        )
+
+    def test_different_phrasing(self):
+        self.assertEqual(
+            find_best_intent("explain python", self.knowledge),
+            "python"
+        )
+
+    def test_fuzzy_matching(self):
+        self.assertEqual(
+            find_best_intent("helo", self.knowledge),
+            "greeting"
         )
 
     def test_unknown_message(self):
-        response = get_response("tell me a joke", self.knowledge)
+        self.assertIsNone(
+            find_best_intent(
+                "What is the weather on Mars today?",
+                self.knowledge
+            )
+        )
 
-        self.assertEqual(
+    def test_response_generation(self):
+        response = get_response("what is python", self.knowledge)
+
+        self.assertIn(
             response,
-            "Sorry, I don't understand that yet."
+            self.knowledge["python"]["responses"]
         )
 
 
