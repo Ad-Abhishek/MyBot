@@ -4,14 +4,14 @@
     "responses": [
       "Hello! How can I help you?",
       "Hi there! What would you like to learn?",
-      "Hey! I'm PyBot. Ask me something."
+      "Hey! I'm MyBot. Ask me something."
     ]
   },
   "bot_identity": {
     "patterns": ["what is your name", "who are you", "tell me about yourself"],
     "responses": [
-      "My name is PyBot, your Python chatbot.",
-      "I'm PyBot, a chatbot built with Python."
+      "My name is MyBot, your Python chatbot.",
+      "I'm MyBot, a chatbot built with Python."
     ]
   },
   "python": {
