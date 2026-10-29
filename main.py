@@ -125,7 +125,7 @@ def chat():
 
     knowledge = load_knowledge()
 
-    print("Welcome to PyBot!")
+    print("Welcome to MyBot!")
     print("Ask me about Python, machine learning, or AI.")
     print("Type 'bye' to exit.")
 
@@ -135,10 +135,10 @@ def chat():
         intent = find_best_intent(user_message, knowledge)
 
         if intent == "farewell":
-            print("PyBot:", get_response(user_message, knowledge))
+            print("MyBot:", get_response(user_message, knowledge))
             break
 
-        print("PyBot:", get_response(user_message, knowledge))
+        print("MyBot:", get_response(user_message, knowledge))
 
 
 if __name__ == "__main__":
